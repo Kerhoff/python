@@ -26,3 +26,33 @@
 #    “ед”: [“шт.”]
 #    }
 
+
+goods: list = []
+
+# Get number of products
+number_of_products: int = int(input("Enter number of products:"))
+
+# Get product details
+for i in range(number_of_products):
+    print("Enter product details below: ")
+    product_id: int = int(input("Id: "))
+    name: str = input("Name: ")
+    price: float = float(input("Price: "))
+    quantity: int = int(input("Quantity: "))
+    unit: str = input("Unit: ")
+
+    product: tuple = (product_id, {"name": name, "price": price, "quantity": quantity, "unit": unit})
+    goods.append(product)
+    i += 1
+
+print(goods)
+
+# Get analytics of goods
+goods_analytics: dict = {"name": [], "price": [], "quantity": [], "unit": []}
+for product in goods:
+    goods_analytics["name"].append(product[1]["name"])
+    goods_analytics["price"].append(product[1]["price"])
+    goods_analytics["quantity"].append(product[1]["quantity"])
+    goods_analytics["unit"].append(product[1]["unit"])
+
+print(goods_analytics)
