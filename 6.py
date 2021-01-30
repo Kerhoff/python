@@ -6,3 +6,22 @@
 #    Каждое слово состоит из латинских букв в нижнем регистре.
 #    Сделать вывод исходной строки, но каждое слово должно начинаться с заглавной буквы.
 #    Необходимо использовать написанную ранее функцию int_func().
+
+# Define function
+def int_func(word) -> str:
+    return word.capitalize()
+
+
+# Get string from user and create list
+input_string: str = input("Enter string: ")
+input_list: list = input_string.split()
+output_list: list = []
+
+# Capitalize words
+for word in input_list:
+    cap_word = int_func(word)
+    output_list.append(cap_word)
+
+# Create and output new string
+output_string = ' '.join(output_list)
+print(output_string)
